@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirect on Back Button</title>
+  <script type="text/javascript">
+    window.onload = function() {
+      // User ko 'Back' button press karne par redirect karna
+      history.pushState(null, null, location.href);
+      window.onpopstate = function() {
+        // Jab back button press hoga, redirect to another page
+        window.location.href = "https://www.example.com"; // Yahan apni website ka URL daalein
+      };
+    };
+  </script>
+</head>
+<body>
+  <h1>Welcome to Our Website!</h1>
+  <p>Try to press the Back Button!</p>
+</body>
+</html>
